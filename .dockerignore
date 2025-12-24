@@ -1,0 +1,56 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info
+.eggs
+*.egg
+
+# Virtual environments
+venv
+.venv
+env
+.env
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Test files
+*.test.*
+tests/
+
+# Documentation
+*.md
+!README.md
+docs/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Output files (will be generated at runtime)
+*.ass
+*.lrc
+o_*.lrc
+o.ass
+
+# Example files
+i.txt
+i.wav
+i.mp3
+
+# OS
+.DS_Store
+Thumbs.db
+

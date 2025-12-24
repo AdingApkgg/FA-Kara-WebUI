@@ -1,0 +1,43 @@
+services:
+  fa-kara-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fa-kara-webui
+    ports:
+      - "27860:7860"
+    volumes:
+      # 持久化模型缓存
+      - fa-kara-cache:/home/appuser/.cache
+      # 持久化 NLTK 数据（可选，镜像已预装）
+      - nltk-data:/usr/share/nltk_data
+    environment:
+      - GRADIO_SERVER_NAME=0.0.0.0
+      - GRADIO_SERVER_PORT=7860
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  # ========== frpc 内网穿透 (可选) ==========
+  # 启用方式: podman compose --profile frpc up -d
+  frpc:
+    image: docker.io/snowdreamtech/frpc:latest
+    container_name: fa-kara-frpc
+    profiles:
+      - frpc  # 仅在指定 --profile frpc 时启动
+    volumes:
+      - ./frpc.toml:/etc/frp/frpc.toml:ro
+    network_mode: host  # 使用宿主机网络，方便穿透本地服务
+    restart: unless-stopped
+    depends_on:
+      - fa-kara-web
+
+volumes:
+  fa-kara-cache:
+  nltk-data:
+

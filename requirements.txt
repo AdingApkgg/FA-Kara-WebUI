@@ -1,0 +1,23 @@
+# Web UI
+gradio>=4.0.0
+
+# Audio processing (torch/torchaudio installed separately in Dockerfile)
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# Japanese text processing
+janome>=0.5.0
+pykakasi>=2.2.0
+jaconv>=0.3.0
+
+# English text processing
+nltk>=3.8.0
+pyphen>=0.14.0
+
+# Chinese text processing (optional)
+pypinyin>=0.49.0
+
+# Utilities
+numpy>=1.24.0
+regex>=2023.0.0
+

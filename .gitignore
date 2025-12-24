@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual env
+venv/
+.venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Cache
+.cache/
+*.log
+
+# Model cache (too large)
+*.pt
+*.pth
+*.bin
+*.onnx
+
+# Temp files
+*.tmp
+*.temp
+outputs/
