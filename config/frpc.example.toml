@@ -1,0 +1,18 @@
+# frpc 内网穿透配置模板
+# 使用方法：复制此文件为 frpc.toml 并填入你的服务器信息
+# cp config/frpc.example.toml config/frpc.toml
+
+serverAddr = "your-frps-server.com"  # frps 服务器地址
+serverPort = 7000                     # frps 服务器端口
+
+[auth]
+method = "token"
+token = "your-secret-token"           # 改成你的 frps token
+
+[[proxies]]
+name = "fa-kara-web"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 27860   # 本机 FA-Kara 端口 (compose.yaml 中映射的端口)
+remotePort = 27860  # 远程服务器开放的端口
+

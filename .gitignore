@@ -1,4 +1,4 @@
-# Python
+# ========== Python ==========
 __pycache__/
 *.py[cod]
 *$py.class
@@ -9,28 +9,49 @@ __pycache__/
 dist/
 build/
 
-# Virtual env
+# ========== Virtual Environments ==========
 venv/
 .venv/
 ENV/
+.env
 
-# IDE
+# ========== IDE ==========
 .idea/
 .vscode/
 *.swp
 *.swo
+*.sublime-*
 
-# Cache
+# ========== Cache ==========
 .cache/
 *.log
+.pytest_cache/
+.mypy_cache/
 
-# Model cache (too large)
+# ========== Model Files (too large) ==========
 *.pt
 *.pth
 *.bin
 *.onnx
+*.safetensors
 
-# Temp files
+# ========== Temp & Output Files ==========
 *.tmp
 *.temp
 outputs/
+temp/
+
+# ========== FA-Kara IO Files ==========
+FA-Kara/i.*
+FA-Kara/o.*
+FA-Kara/o_*.lrc
+
+# ========== OS Files ==========
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========== Secrets (IMPORTANT) ==========
+# frpc 配置包含 token，不要提交！使用模板替代
+config/frpc.toml
+!config/frpc.example.toml

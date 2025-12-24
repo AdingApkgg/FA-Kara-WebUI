@@ -1,9 +1,9 @@
-# Git
+# ========== Git ==========
 .git
 .gitignore
 .gitattributes
 
-# Python
+# ========== Python ==========
 __pycache__
 *.py[cod]
 *$py.class
@@ -13,44 +13,40 @@ __pycache__
 .eggs
 *.egg
 
-# Virtual environments
+# ========== Virtual Environments ==========
 venv
 .venv
 env
 .env
+ENV
 
-# IDE
+# ========== IDE ==========
 .vscode
 .idea
 *.swp
 *.swo
 
-# Test files
+# ========== Test/Example Files ==========
 *.test.*
 tests/
+FA-Kara/i.*
+FA-Kara/o.*
+FA-Kara/o_*.lrc
 
-# Documentation
+# ========== Documentation ==========
 *.md
-!README.md
 docs/
 
-# Temporary files
+# ========== Config (secrets) ==========
+config/frpc.toml
+
+# ========== Temp Files ==========
 *.tmp
 *.temp
 *.log
+outputs/
+temp/
 
-# Output files (will be generated at runtime)
-*.ass
-*.lrc
-o_*.lrc
-o.ass
-
-# Example files
-i.txt
-i.wav
-i.mp3
-
-# OS
+# ========== OS ==========
 .DS_Store
 Thumbs.db
-

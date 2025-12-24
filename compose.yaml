@@ -31,7 +31,7 @@ services:
     profiles:
       - frpc  # 仅在指定 --profile frpc 时启动
     volumes:
-      - ./frpc.toml:/etc/frp/frpc.toml:ro
+      - ./config/frpc.toml:/etc/frp/frpc.toml:ro
     network_mode: host  # 使用宿主机网络，方便穿透本地服务
     restart: unless-stopped
     depends_on:
